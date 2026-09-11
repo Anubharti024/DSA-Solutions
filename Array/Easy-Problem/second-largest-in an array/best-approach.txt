@@ -1,0 +1,25 @@
+
+// Code 360 by coding ninja platform:
+
+#include <bits/stdc++.h> 
+int findSecondLargest(int n, vector<int> &arr)
+{   
+   int largestNo = INT_MIN;
+   int secondLarge = INT_MIN;
+    //First Largest:
+   for(int i = 0; i < n; i++){
+       if(arr[i] > largestNo){
+           largestNo = arr[i];
+       }
+   }
+   //Second largest:
+   for(int i = 0; i < n; i++){
+       if(arr[i] > secondLarge && arr[i] != largestNo){
+           secondLarge = arr[i];
+       }
+   }
+   if (secondLarge == INT_MIN)
+        return -1;
+
+   return secondLarge;
+}
